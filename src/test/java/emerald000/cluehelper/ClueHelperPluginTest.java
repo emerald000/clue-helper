@@ -1,13 +1,14 @@
-package com.example;
+package emerald000.cluehelper;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
+import emerald000.cluehelper.ClueHelperPlugin;
 
-public class ExamplePluginTest
+public class ClueHelperPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(ExamplePlugin.class);
+		ExternalPluginManager.loadBuiltin(ClueHelperPlugin.class);
 		RuneLite.main(args);
 	}
 }
