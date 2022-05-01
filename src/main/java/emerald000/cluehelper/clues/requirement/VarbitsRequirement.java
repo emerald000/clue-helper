@@ -27,8 +27,8 @@ package emerald000.cluehelper.clues.requirement;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import net.runelite.api.Client;
-import net.runelite.api.Varbits;
 import emerald000.cluehelper.ClueHelperPlugin;
+import net.runelite.api.annotations.Varbit;
 
 @Getter
 @AllArgsConstructor
@@ -43,7 +43,7 @@ public class VarbitsRequirement implements Requirement
 	}
 
 	final String text;
-	final Varbits varbits;
+	final @Varbit int varbits;
 	final ComparisonType comparisonType;
 	final int value;
 
@@ -56,7 +56,7 @@ public class VarbitsRequirement implements Requirement
 	@Override
 	public Fulfilled fulfilledBy(ClueHelperPlugin plugin)
 	{
-		int varbitValue = plugin.getClient().getVar(varbits);
+		int varbitValue = plugin.getClient().getVarbitValue(varbits);
 		switch (comparisonType)
 		{
 			case GREATER_THAN:

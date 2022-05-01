@@ -46,7 +46,7 @@ public class FavourRequirement implements Requirement
 	@Override
 	public Fulfilled fulfilledBy(ClueHelperPlugin plugin)
 	{
-		if (plugin.getClient().getVar(favour.getVarbit()) >= percent * 10)
+		if (plugin.getClient().getVarbitValue(favour.getVarbit()) >= percent * 10)
 		{
 			return Fulfilled.TRUE;
 		}

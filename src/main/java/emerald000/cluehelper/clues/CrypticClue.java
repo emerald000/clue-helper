@@ -1828,7 +1828,7 @@ public class CrypticClue extends ClueScroll
 			.area("Speak to Oziach in Edgeville")
 			.build(),
 		CrypticClue.builder()
-			.text("The King's magic won't be wasted by me.")
+			.text("The King's magic shouldn't be wasted by me.")
 			.clueId(CLUE_SCROLL_HARD_12587)
 			.npc("Guardian mummy")
 			.location(new ClueArea(1934, 4427, 0))

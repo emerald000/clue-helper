@@ -33,8 +33,8 @@ import net.runelite.api.Client;
 import net.runelite.api.InventoryID;
 import net.runelite.api.ItemContainer;
 import static net.runelite.api.ItemID.*;
-import net.runelite.api.Varbits;
 import static net.runelite.api.Varbits.*;
+import net.runelite.api.annotations.Varbit;
 import net.runelite.client.game.RunepouchRune;
 import emerald000.cluehelper.ClueHelperPlugin;
 
@@ -73,9 +73,9 @@ public class RuneRequirement implements Requirement
 			Sets.newHashSet(STAFF_OF_WATER, WATER_BATTLESTAFF, MYSTIC_WATER_STAFF, MUD_BATTLESTAFF, MYSTIC_MUD_STAFF, STEAM_BATTLESTAFF, STEAM_BATTLESTAFF_12795, MYSTIC_STEAM_STAFF, MYSTIC_STEAM_STAFF_12796, MIST_BATTLESTAFF, MYSTIC_MIST_STAFF, KODAI_WAND, TOME_OF_WATER)),
 		WRATH("Wrath", Sets.newHashSet(WRATH_RUNE));
 
-		String name;
-		Set<Integer> inventoryFulfillment;
-		Set<Integer> equipmentFulfillment;
+		final String name;
+		final Set<Integer> inventoryFulfillment;
+		final Set<Integer> equipmentFulfillment;
 
 		Rune(String name, Set<Integer> inventoryFulfillment)
 		{
@@ -83,8 +83,8 @@ public class RuneRequirement implements Requirement
 		}
 	}
 
-	private static final Varbits[] TYPE_VARBITS = {RUNE_POUCH_RUNE1, RUNE_POUCH_RUNE2, RUNE_POUCH_RUNE3};
-	private static final Varbits[] AMOUNT_VARBITS = {RUNE_POUCH_AMOUNT1, RUNE_POUCH_AMOUNT2, RUNE_POUCH_AMOUNT3};
+	private static final @Varbit int[] TYPE_VARBITS = {RUNE_POUCH_RUNE1, RUNE_POUCH_RUNE2, RUNE_POUCH_RUNE3};
+	private static final @Varbit int[] AMOUNT_VARBITS = {RUNE_POUCH_AMOUNT1, RUNE_POUCH_AMOUNT2, RUNE_POUCH_AMOUNT3};
 	private static final Requirement runePouchRequirement = new OrRequirement(new InventoryRequirement(RUNE_POUCH), new InventoryRequirement(RUNE_POUCH_L));
 
 	private final Rune rune;
@@ -140,10 +140,10 @@ public class RuneRequirement implements Requirement
 		{
 			for (int i = 0; i <= 2; i++)
 			{
-				RunepouchRune runepouchRune = RunepouchRune.getRune(client.getVar(TYPE_VARBITS[i]));
+				RunepouchRune runepouchRune = RunepouchRune.getRune(client.getVarbitValue(TYPE_VARBITS[i]));
 				if (runepouchRune != null && rune.getInventoryFulfillment().contains(runepouchRune.getItemId()))
 				{
-					totalQuantity += client.getVar(AMOUNT_VARBITS[i]);
+					totalQuantity += client.getVarbitValue(AMOUNT_VARBITS[i]);
 					if (totalQuantity >= quantity)
 					{
 						return Fulfilled.TRUE;

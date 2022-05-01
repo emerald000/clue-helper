@@ -86,7 +86,6 @@ import static emerald000.cluehelper.clues.requirement.SpellbookRequirement.Spell
 import static emerald000.cluehelper.clues.requirement.SpellbookRequirement.Spellbook.LUNAR;
 import static emerald000.cluehelper.clues.requirement.SpellbookRequirement.Spellbook.STANDARD;
 import emerald000.cluehelper.clues.requirement.VarbitsRequirement;
-import static emerald000.cluehelper.clues.requirement.VarbitsRequirement.ComparisonType.EQUAL;
 import static emerald000.cluehelper.clues.requirement.VarbitsRequirement.ComparisonType.LESS_THAN;
 
 @Getter

@@ -1353,7 +1353,7 @@ public class EmoteClue extends ClueScroll
 			.location(new ClueArea(1944, 4427, 0))
 			.enemy(DOUBLE_AGENT_141)
 			.firstEmote(YAWN)
-			.itemRequirement(any("Pharaoh's sceptre", item(PHARAOHS_SCEPTRE), item(PHARAOHS_SCEPTRE_1), item(PHARAOHS_SCEPTRE_2), item(PHARAOHS_SCEPTRE_3), item(PHARAOHS_SCEPTRE_4), item(PHARAOHS_SCEPTRE_5), item(PHARAOHS_SCEPTRE_6), item(PHARAOHS_SCEPTRE_7), item(PHARAOHS_SCEPTRE_8)))
+			.itemRequirement(any("Pharaoh's sceptre", item(PHARAOHS_SCEPTRE_UNCHARGED), item(PHARAOHS_SCEPTRE_26948), item(PHARAOHS_SCEPTRE_26950)))
 			.itemRequirement(any("Full set of menaphite robes", all(item(MENAPHITE_PURPLE_HAT), item(MENAPHITE_PURPLE_TOP), range(MENAPHITE_PURPLE_ROBE, MENAPHITE_PURPLE_KILT)), all(item(MENAPHITE_RED_HAT), item(MENAPHITE_RED_TOP), range(MENAPHITE_RED_ROBE, MENAPHITE_RED_KILT))))
 			.build()
 	);

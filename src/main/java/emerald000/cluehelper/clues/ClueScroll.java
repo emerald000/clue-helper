@@ -39,6 +39,7 @@ import lombok.Setter;
 import lombok.Singular;
 import lombok.experimental.SuperBuilder;
 import net.runelite.api.Varbits;
+import net.runelite.api.annotations.Varbit;
 import net.runelite.api.coords.WorldPoint;
 import net.runelite.client.ui.overlay.components.PanelComponent;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -57,7 +58,9 @@ public abstract class ClueScroll
 
 	// TODO: Remove
 	@Setter(AccessLevel.PROTECTED)
-	private Varbits firePitVarbits;
+	@Varbit
+	@Builder.Default
+	private int firePitVarbits = -1;
 
 	@Nullable
 	private final String text;

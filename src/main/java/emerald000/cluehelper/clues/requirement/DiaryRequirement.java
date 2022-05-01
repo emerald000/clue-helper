@@ -29,7 +29,6 @@ import java.util.Map;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import net.runelite.api.Client;
-import net.runelite.api.Varbits;
 import static net.runelite.api.Varbits.*;
 import emerald000.cluehelper.ClueHelperPlugin;
 import static emerald000.cluehelper.clues.requirement.DiaryRequirement.DiaryLevel.EASY;
@@ -58,8 +57,8 @@ public class DiaryRequirement implements Requirement
 		WESTERN_PROVINCES("Western Provinces", ImmutableMap.of(EASY, DIARY_WESTERN_EASY, MEDIUM, DIARY_WESTERN_MEDIUM, HARD, DIARY_WESTERN_HARD, ELITE, DIARY_WESTERN_ELITE)),
 		WILDERNESS("Wilderness", ImmutableMap.of(EASY, DIARY_WILDERNESS_EASY, MEDIUM, DIARY_WILDERNESS_MEDIUM, HARD, DIARY_WILDERNESS_HARD, ELITE, DIARY_WILDERNESS_ELITE));
 
-		String name;
-		Map<DiaryLevel, Varbits> varbitsMap;
+		final String name;
+		final Map<DiaryLevel, Integer> varbitsMap;
 	}
 
 	@Getter
@@ -71,7 +70,7 @@ public class DiaryRequirement implements Requirement
 		HARD("Hard"),
 		ELITE("Elite");
 
-		String name;
+		final String name;
 	}
 
 	final DiaryRegion region;
@@ -86,7 +85,7 @@ public class DiaryRequirement implements Requirement
 	@Override
 	public Fulfilled fulfilledBy(ClueHelperPlugin plugin)
 	{
-		if (plugin.getClient().getVar(region.getVarbitsMap().get(level)) == 1)
+		if (plugin.getClient().getVarbitValue(region.getVarbitsMap().get(level)) == 1)
 		{
 			return Fulfilled.TRUE;
 		}

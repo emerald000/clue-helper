@@ -1303,6 +1303,13 @@ public class CoordinateClue extends ClueScroll
 			.extraMapPoint(new WorldPoint(2482, 3486, 1))
 			.extraMapPoint(new WorldPoint(2802, 2706, 0))
 			.build(),
+		// TODO Requirements
+		CoordinateClue.builder()
+			.text("14 degrees 13 minutes south 27 degrees 26 minutes east")
+			.location(new ClueArea(3318, 2706, 0))
+			.area("Necropolis mine")
+			.enemy(ARMADYLEAN_OR_BANDOSIAN_GUARD)
+			.build(),
 		CoordinateClue.builder()
 			.text("14 degrees 15 minutes south 08 degrees 01 minutes east")
 			.clueId(CLUE_SCROLL_ELITE_12096)

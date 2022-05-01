@@ -143,14 +143,8 @@ public enum CommonRequirement
 			new InventoryRequirement(NECKLACE_OF_PASSAGE5))),
 	CAN_TELEPORT_WITH_PHARAOHS_SCEPTER(
 		new OrRequirement("Charged Pharaoh's Scepter",
-			new InventoryRequirement(PHARAOHS_SCEPTRE_1),
-			new InventoryRequirement(PHARAOHS_SCEPTRE_2),
-			new InventoryRequirement(PHARAOHS_SCEPTRE_3),
-			new InventoryRequirement(PHARAOHS_SCEPTRE_4),
-			new InventoryRequirement(PHARAOHS_SCEPTRE_5),
-			new InventoryRequirement(PHARAOHS_SCEPTRE_6),
-			new InventoryRequirement(PHARAOHS_SCEPTRE_7),
-			new InventoryRequirement(PHARAOHS_SCEPTRE_8))),
+			new InventoryRequirement(PHARAOHS_SCEPTRE_26948),
+			new InventoryRequirement(PHARAOHS_SCEPTRE_26950))),
 	CAN_TELEPORT_WITH_RING_OF_DUELING(
 		new OrRequirement("Ring of Dueling",
 			new InventoryRequirement(RING_OF_DUELING1),
