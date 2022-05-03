@@ -291,16 +291,10 @@ public class ClueHelperPlugin extends Plugin
 			return;
 		}
 
-		final boolean itemClicked = event.getMenuAction() == MenuAction.ITEM_FIRST_OPTION
-			|| event.getMenuAction() == MenuAction.ITEM_SECOND_OPTION
-			|| event.getMenuAction() == MenuAction.ITEM_THIRD_OPTION
-			|| event.getMenuAction() == MenuAction.ITEM_FOURTH_OPTION
-			|| event.getMenuAction() == MenuAction.ITEM_FIFTH_OPTION;
-		final boolean isXMarksTheSpotOrb = event.getId() == ItemID.MYSTERIOUS_ORB_23069;
-
-		if (itemClicked && (isXMarksTheSpotOrb || event.getMenuOption().equals("Read")))
+		final boolean isXMarksTheSpotOrb = event.getItemId() == ItemID.MYSTERIOUS_ORB_23069;
+		if (isXMarksTheSpotOrb || event.getMenuOption().equals("Read"))
 		{
-			final ItemComposition itemComposition = itemManager.getItemComposition(event.getId());
+			final ItemComposition itemComposition = itemManager.getItemComposition(event.getItemId());
 
 			if (isXMarksTheSpotOrb
 				|| itemComposition.getName().startsWith("Clue scroll")
@@ -311,7 +305,7 @@ public class ClueHelperPlugin extends Plugin
 				updateClue(MapClue.forItemId(clueItemId));
 			}
 		}
-		else if (event.getMenuOption().equals("Search") && clue instanceof EmoteClue)
+		else if (event.getMenuOption().equals("Search")	&& clue instanceof EmoteClue)
 		{
 			EmoteClue emoteClue = (EmoteClue) clue;
 			if (emoteClue.getStashUnit() != null && emoteClue.getStashUnit().getObjectId() == event.getId())
